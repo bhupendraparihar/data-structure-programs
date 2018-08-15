@@ -41,17 +41,38 @@ class LinkList:
             last = last.next
             
         last.next = new_node
+        
+    def delete(self, key):
+        temp = self.head
+        
+        if (temp is not None):
+            if(temp.data == key):
+                self.head = temp.next
+                temp = None
+                return
+        
+        while(temp is not None):
+            if(temp.data == key):
+                break;
+            prev = temp
+            temp = temp.next
+        
+        if(temp == None):
+            return
+        
+        prev.next = temp.next
+        temp = None
+        
+        
             
 if __name__ == '__main__':
     llist = LinkList()
-    # llist.head = Node(1)
-    # second = Node(2)
-    # third = Node(3)
-    # llist.head.next = second
-    # second.next = third
     
     llist.append(1)
     llist.append(2)
     llist.append(3)
+    llist.append(4)
+    llist.printList()
+    llist.delete(3)
     llist.printList()
             

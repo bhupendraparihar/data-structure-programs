@@ -45,5 +45,5 @@ if __name__ == '__main__':
     llist.append(3)
     llist.append(4)
     llist.printList()
-    llist.deleteList(3)
+    llist.deleteList()
     llist.printList()
